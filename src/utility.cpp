@@ -7,7 +7,7 @@
 
 
 #include "utility.h"
-#include "iostream"
+#include <iostream>
 #include "Life.h"
 
 void instructions()
@@ -22,6 +22,25 @@ void instructions()
 }
 
 bool user_says_yes()
+
 {
-  return true;
-}
+  int c;
+  bool initial_response = true;
+
+  do {
+      if(initial_response)
+          std::cout<< "y,n?"<<std::flush;
+      else
+          std::cout<<"respond with a yes or no"<<std::flush;
+       do   {
+           c=std::cin.get();
+          } while(c=='\n'||c=='\0'||c=='\t');
+       initial_response = false;
+
+  } while(c!='y' && c!='Y' && c!='n' && c!= 'N');
+
+    return (c == 'y' || c == 'Y');
+  }
+
+
+

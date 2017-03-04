@@ -6,7 +6,7 @@
  */
 
 #include "Life.h"
-#include "iostream"
+#include <iostream>
 
 void Life::initialize()
 
