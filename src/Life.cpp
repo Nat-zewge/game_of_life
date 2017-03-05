@@ -9,13 +9,45 @@
 #include <iostream>
 
 void Life::initialize()
-
+  /* Pre: None
+     Post:the Life object will contain a setting specified by the user    */
 {
+  int row,col;
+  for(row = 0; row <= maxrow; row ++)
+    {
+    for(col = 0;col <= maxcol; col++)
+      {
+        grid[row][col] = 0;
+      }
+    }
+  std::cout<<"list the coordinates of the living cells"<<std::endl;
+  std::cout<<"terminate the list with the special pair -1 -1" <<std::endl;
+  std::cin>>row>>col;
+  while(row!=-1 && col!= -1)
+  {
+      if(row >=1 && row <= maxrow)
+        {
+          if(col>=1 && col <=maxcol)
 
+          {
+              grid[row][col]=1;
+          }
+            else std::cout<<"Column is out of range";
+        }
+
+      else std::cout<<"Row is out of range";
+
+      std::cin>>row>>col;
+  }
 
 }
 
 void Life::print()
+
+/*Pre: The Life object contains a configuration
+ *Post: Displays the configuration for the user
+ */
+
 
 {
   int row,col;
